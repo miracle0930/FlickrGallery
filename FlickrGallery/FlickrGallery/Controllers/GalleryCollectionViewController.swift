@@ -45,7 +45,7 @@ class GalleryCollectionViewController: UICollectionViewController {
                 self.collectionView?.reloadData()
                 self.page += 1
             } else {
-                let alert = UIAlertController(title: "Connection Failed", message: error!, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Failed", message: error!, preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)

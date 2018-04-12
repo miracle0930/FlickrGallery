@@ -40,10 +40,17 @@ class PhotoViewController: UIViewController {
     
     // use flickrAPIParser to load the photo's detail.
     func loadPhotoInfo() {
-        flickrAPIParser?.getPhotoInfo(key: api_key, photoID: photoId!, completion: { (info) in
-            self.authorLabel.text = info["author"] == "" ? self.authorPlaceholder : info["author"]
-            self.recordDateLabel.text = info["recordDate"] == "" ? self.recordDatePlaceHolder : info["recordDate"]
-            self.photoDescriptionTextView.text = info["description"] == "" ? self.descriptionPlaceholder : info["description"]
+        flickrAPIParser?.getPhotoInfo(key: api_key, photoID: photoId!, completion: { (info, error) in
+            if let info = info {
+                self.authorLabel.text = info["author"] == "" ? self.authorPlaceholder : info["author"]
+                self.recordDateLabel.text = info["recordDate"] == "" ? self.recordDatePlaceHolder : info["recordDate"]
+                self.photoDescriptionTextView.text = info["description"] == "" ? self.descriptionPlaceholder : info["description"]
+            } else {
+                let alert = UIAlertController(title: "Failed", message: error!, preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
         })
     }
 

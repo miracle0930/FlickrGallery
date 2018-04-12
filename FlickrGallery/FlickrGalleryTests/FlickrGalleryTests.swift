@@ -32,9 +32,9 @@ class FlickrGalleryTests: XCTestCase {
         let per_page = 31
         for _ in stride(from: page, to: 40, by: 1) {
             let exp: XCTestExpectation? = expectation(description: "timeout!")
-            testAPIParser.getInterestingnessList(key: api_key, date: "2018-04-11", page: page, per_page: per_page, completion: { (photos) in
+            testAPIParser.getInterestingnessList(key: api_key, date: "2018-04-11", page: page, per_page: per_page, completion: { (photos, error) in
                 let ans = page * per_page > 500 ? 500 - (page - 1) * per_page : per_page
-                XCTAssertEqual(photos.count, ans, "Didn't return correct number of photos.")
+                XCTAssertEqual(photos!.count, ans, "Didn't return correct number of photos.")
                 exp?.fulfill()
             })
             waitForExpectations(timeout: 3) { (error) in
@@ -50,7 +50,7 @@ class FlickrGalleryTests: XCTestCase {
         let page = 40
         let per_page = 13
         let testCount = testGalleryCollectionViewController.photos.count
-        testAPIParser.getInterestingnessList(key: api_key, date: "2018-04-12", page: page, per_page: per_page) { (_) in}
+        testAPIParser.getInterestingnessList(key: api_key, date: "2018-04-12", page: page, per_page: per_page) { (_, _) in}
         XCTAssertEqual(testCount, 0, "Page 40 is greater than the largest page, nothing should be added into photos")
     }
 }

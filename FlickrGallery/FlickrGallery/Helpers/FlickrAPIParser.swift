@@ -51,7 +51,7 @@ class FlickrAPIParser {
      Used Alamofire to send request and SWXMLHash to pares the response data.
      Once complete, completion handler will be called to send data back to `PhotoViewController`.
     */
-    func getPhotoInfo(key: String, photoID: String, completion: @escaping (_ detail: [String: String]) -> Void) {
+    func getPhotoInfo(key: String, photoID: String, completion: @escaping (_ detail: [String: String]?, _ error: String?) -> Void) {
         let requestURL = "\(baseAPI)flickr.photos.getInfo&photo_id=\(photoID)&api_key=\(key)"
         Alamofire.request(requestURL, method: .get).responseData { (response) in
             if response.result.isSuccess {
@@ -60,7 +60,9 @@ class FlickrAPIParser {
                 photoInfo["author"] = data["rsp"]["photo"]["owner"].element?.attribute(by: "realname")?.text
                 photoInfo["description"] = data["rsp"]["photo"]["description"].element?.text
                 photoInfo["recordDate"] = data["rsp"]["photo"]["dates"].element?.attribute(by: "taken")?.text
-                completion(photoInfo)
+                completion(photoInfo, nil)
+            } else {
+                completion(nil, response.error?.localizedDescription)
             }
         }
     }
