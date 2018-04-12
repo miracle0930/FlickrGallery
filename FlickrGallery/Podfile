@@ -1,0 +1,8 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'FlickrGallery' do
+  use_frameworks!
+  pod 'Alamofire'
+  pod 'SWXMLHash', '~> 4.0.0'
+end
