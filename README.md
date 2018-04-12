@@ -2,6 +2,9 @@
 Load yesterday's interestingness from Flickr.
 
 ## Animation
+<p align = "center"> Portrait Mode on iPhone 5s</p>
+<p align = "center"><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" /></p>
+
 
 ## Application Overview
 - A two screens application aimming at getting yesterday's interestingness photos with Flickr's RESTful API. 
