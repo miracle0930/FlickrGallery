@@ -3,9 +3,9 @@ Load yesterday's interestingness from Flickr.
 
 ## Animation
 <figure class = "third">
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif"/>
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif"/>
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif"/>
+    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" width = "300"/>
+    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif" width = "300"/>
+    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif" width = "300"/>
 </figure>
 
 
