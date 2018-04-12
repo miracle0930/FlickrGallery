@@ -4,12 +4,16 @@ Load yesterday's interestingness from Flickr.
 ## Animation
 
 <table style="width:100%">
-    <tr>
+    <tr align = "center">
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" width = "200"/></td>
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif" width = "200"/></td>
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif" width = "200"/></td>
     </tr>
-
+    <tr align = "center">
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscape5s.gif" width = "200"/></td>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/lanscape8P.gif" width = "200"/></td>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/lanscapeX.gif" width = "200"/></td>
+    </tr>
 </table>
 
 ## Application Overview
