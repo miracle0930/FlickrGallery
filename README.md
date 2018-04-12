@@ -2,12 +2,15 @@
 Load yesterday's interestingness from Flickr.
 
 ## Animation
-<figure class = "third">
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" width = "200"/>
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif" width = "200"/>
-    <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif" width = "2s00"/>
-</figure>
 
+<table style="width:100%">
+    <tr>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" width = "200"/></td>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif" width = "200"/></td>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif" width = "200"/></td>
+    </tr>
+
+</table>
 
 ## Application Overview
 - A two screens application aimming at getting yesterday's interestingness photos with Flickr's RESTful API. 
