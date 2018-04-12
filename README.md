@@ -5,7 +5,7 @@ Load yesterday's interestingness from Flickr.
 
 ## Application Overview
 - A two screens application aimming at getting yesterday's interestingness photos with Flickr's RESTful API. 
-- Used UICollectionView and custom UICollectionViewCell to hold a list of photos with photos' static image and their title.
+- Used UICollectionView and custom UICollectionViewCell to hold photos with static image and title.
 - Used UIView to design the detail screen. Users can get photo's description, taken date and authors' name.
 - Users can use this application under both portrait and landscape mode.
 
