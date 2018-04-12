@@ -33,6 +33,7 @@ class GalleryCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Gallery"
         self.collectionView!.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "galleryCollectionViewCell")
+        
         loadInterestingnessList()
     }
     

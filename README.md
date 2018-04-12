@@ -24,6 +24,9 @@ Load yesterday's interestingness from Flickr.
 - Used UIView to design the detail screen. Users can get photo's description, taken date and authors' name.
 - Users can use this application under both portrait and landscape mode.
 
+## Usage
+- `git clone https://github.com/miracle0930/FlickrGallery.git` then you are ready to go. Flickr api key were pre-installed.
+
 
 ## Directory
 Directory | Introduction
