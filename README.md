@@ -3,7 +3,8 @@ Load yesterday's interestingness from Flickr.
 
 ## Animation
 <p align = "left"> Portrait Mode </p>
-<p align = "left">iPhone 5s<img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" /></p>
+<p align = "left"><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif" /></p>
+<p align = "center"><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8p.gif" /></p>
 
 
 ## Application Overview
