@@ -24,6 +24,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     let flickrParser = FlickrAPIParser()
     var page = 1
     var per_page = 15
+    let imagePlaceholderData = UIImageJPEGRepresentation(UIImage(named: "imagePlaceholder")!, 1)
 
     var yesterday: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
@@ -58,6 +59,7 @@ class GalleryCollectionViewController: UICollectionViewController {
      Set photos asynchronously.
      Check whether the `imageCache` contains the image data, if not, download the image with `photoImageURL` in `Photo` and store it into `imageCache`.
      `photoImageURL` will be downloaded only once unless users restart the app. After downloading, cell's image will always be pulling from cache.
+     If no image can be downloaded from url, a placeholder image will be used which tells use the image is not available.
     */
     func setCellImageAsync(cell: GalleryCollectionViewCell, indexPath: IndexPath, completion: @escaping(_ imageData: Data) -> Void) {
         if let cacheNSData = imageCache.object(forKey: self.photos[indexPath.section].id as NSString) {
@@ -68,6 +70,11 @@ class GalleryCollectionViewController: UICollectionViewController {
                     DispatchQueue.main.sync {
                         imageCache.setObject(imageData as NSData, forKey: self.photos[indexPath.section].id as NSString)
                         completion(imageData)
+                    }
+                } else {
+                    DispatchQueue.main.sync {
+                        imageCache.setObject(self.imagePlaceholderData! as NSData, forKey: self.photos[indexPath.section].id as NSString)
+                        completion(self.imagePlaceholderData!)
                     }
                 }
             }
