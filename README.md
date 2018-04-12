@@ -15,7 +15,7 @@ Directory | Introduction
 ---|---
 Helpers | Use `Utils` to change data's format. Use `FlickrAPIParser` to build and send request to Flickr.
 Views | Use `GalleryCollectionViewCell` to show photos for yesterday's interestingness.
-Models | Use `Photo` to contain parameter for each photo.
+Models | Use `Photo` to contain parameters inorder to build api to get photo's static image and title.
 Controllers | Use `GalleryCollectionViewController` to show a list of photos. Use `PhotoViewController` to show photo's detail.
 
 ## Features
