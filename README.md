@@ -2,7 +2,7 @@
 Load yesterday's interestingness from Flickr.
 
 ## Animation
-<figure>
+<figure class = "third">
     <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait5s.gif"/>
     <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portrait8P.gif"/>
     <img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/portraitX.gif"/>
