@@ -25,6 +25,7 @@ Controllers | Use `GalleryCollectionViewController` to show a list of photos. Us
 
 ## Unit Test
 FlickrGalleryTests | Intro
+---|---
 testGeneralPageOnFlickrAPI | Test the correctness of number of photos requested via FlickrAPI during using.
 testLoadMoreWhenPageLargerThanTotalPage | Test the correctness of number of photos requested via FlickrAPI when no more data sent back.
 
