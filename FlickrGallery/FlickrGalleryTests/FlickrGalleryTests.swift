@@ -28,8 +28,8 @@ class FlickrGalleryTests: XCTestCase {
     // test the correct return numbers of photo in correct range
     func testGeneralPageOnFlickrAPI() {
         print("Start 'GeneralPageOnFlickrAPI Test.'")
-        let page = 1
-        let per_page = 13
+        let page = 8
+        let per_page = 31
         for _ in stride(from: page, to: 40, by: 1) {
             let exp: XCTestExpectation? = expectation(description: "timeout!")
             testAPIParser.getInterestingnessList(key: api_key, date: "2018-04-11", page: page, per_page: per_page, completion: { (photos) in
