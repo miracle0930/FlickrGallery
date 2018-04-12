@@ -20,7 +20,7 @@ class FlickrAPIParser {
      Used Alamofire to send request and SWXMLHash to parse the response data.
      Once complete gathering all data in current page, completion handler will be called to send data back to `GalleryCollectionViewController`.
     */
-    func getInterestingnessList(key: String, date: String, page: Int, per_page: Int, completion: @escaping(_ result: [Photo]) -> Void) {
+    func getInterestingnessList(key: String, date: String, page: Int, per_page: Int, completion: @escaping(_ result: [Photo]?, _ error: String?) -> Void) {
         let requestURL = "\(baseAPI)flickr.interestingness.getList&date=\(date)&per_page=\(per_page)&page=\(page)&api_key=\(key)"
         var photos = [Photo]()
         Alamofire.request(requestURL, method: .get).responseData { (response) in
@@ -39,7 +39,9 @@ class FlickrAPIParser {
                     photo.photoTitle = (data["rsp"]["photos"]["photo"][i].element?.attribute(by: "title")?.text)!
                     photos.append(photo)
                 }
-                completion(photos)
+                completion(photos, nil)
+            } else {
+                completion(nil, response.error?.localizedDescription)
             }
         }
     }

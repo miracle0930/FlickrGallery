@@ -12,7 +12,7 @@ import UIKit
 class Utils {
     
     /*
-     Convert Date to string in 'YYYY-MM-dd' format inorder to pull out data with flickr API.
+     Convert Date to string in 'YYYY-MM-dd' format inorder to pull out yesterday's data with flickr API.
     */
     static func dateToString(date: Date) -> String {
         let formatter = DateFormatter()
@@ -21,7 +21,7 @@ class Utils {
     }
     
     /*
-     Convert hexString to UIColor. Usually I use 'colorhunt.co' to find appropriate color.
+     Convert hexString to UIColor. Usually I use 'colorhunt.co' to find appropriate color and they were in hexString format.
     */
     static func hexStringToUIColor(hex: String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

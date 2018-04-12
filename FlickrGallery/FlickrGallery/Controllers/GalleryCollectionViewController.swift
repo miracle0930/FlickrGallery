@@ -39,10 +39,18 @@ class GalleryCollectionViewController: UICollectionViewController {
     
     // use flickrParser to get a list of photos which will be shown on collectionView.
     func loadInterestingnessList() {
-        flickrParser.getInterestingnessList(key: api_key, date: Utils.dateToString(date: yesterday), page: page, per_page: per_page) { (photos) in
-            self.photos += photos
-            self.collectionView?.reloadData()
-            self.page += 1
+        flickrParser.getInterestingnessList(key: api_key, date: Utils.dateToString(date: yesterday), page: page, per_page: per_page) { (photos, error) in
+            if let photos = photos {
+                self.photos += photos
+                self.collectionView?.reloadData()
+                self.page += 1
+            } else {
+                let alert = UIAlertController(title: "Connection Failed", message: error!, preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
     }
     

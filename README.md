@@ -37,9 +37,10 @@ Models | Use `Photo` to contain parameters inorder to build api to get photo's s
 Controllers | Use `GalleryCollectionViewController` to show a list of photos. Use `PhotoViewController` to show photo's detail.
 
 ## Features
-- Load photos asynchrounsly and use NSCache to store downloaded photo, to optimize the performance of UICollectionView.
+- Load photos asynchronously and use NSCache to store downloaded photo, to optimize collectionView's scroll effect.
 - Supported UICollectionView pagination when scroll to the bottom.
 - Auto-Layout supported on both portrait and landscape direction.
+- Error pop up when connection lost, like when user turns on flying mode.
 
 ## Unit Test
 FlickrGalleryTests | Intro
