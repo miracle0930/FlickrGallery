@@ -14,7 +14,7 @@ Load yesterday's interestingness from Flickr.
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscape5s.gif" width = "200"/></td>
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscape8P.gif" width = "200"/></td>
         <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscapeX.gif" width = "200"/></td>
-        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscape6sgif" width = "200"/></td>
+        <td><img src = "https://github.com/miracle0930/FlickrGallery/blob/master/screenshots/landscape6s.gif" width = "200"/></td>
     </tr>
 </table>
 
