@@ -9,8 +9,6 @@
 // get photo list api: https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&date=YYYY-MM-DD&api_key=97dfca9877ec3947b4d5e86960ed46ef
 // get photo image api: https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&photo_id=XXXX&api_key=97dfca9877ec3947b4d5e86960ed46ef
 
-
-
 import UIKit
 
 let api_key = "97dfca9877ec3947b4d5e86960ed46ef"
@@ -34,7 +32,6 @@ class GalleryCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Gallery"
         self.collectionView!.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "galleryCollectionViewCell")
-        
         loadInterestingnessList()
     }
     
@@ -58,10 +55,10 @@ class GalleryCollectionViewController: UICollectionViewController {
     /*
      Set photos asynchronously.
      Check whether the `imageCache` contains the image data, if not, download the image with `photoImageURL` in `Photo` and store it into `imageCache`.
-     `photoImageURL` will be downloaded only once unless users restart the app. After downloading, cell's image will always be pulling from cache.
+     The `photoImageURL` will be downloaded only once unless users restart the app. After downloading, cell's image will always be pulling from cache.
      If no image can be downloaded from url, a placeholder image will be used which tells use the image is not available.
     */
-    func setCellImageAsync(cell: GalleryCollectionViewCell, indexPath: IndexPath, completion: @escaping(_ imageData: Data) -> Void) {
+    func setCellImageAsync(cell: GalleryCollectionViewCell, indexPath: IndexPath, completion: @escaping(_ imageData: Data?) -> Void) {
         if let cacheNSData = imageCache.object(forKey: self.photos[indexPath.section].id as NSString) {
             completion(cacheNSData as Data)
         } else {
@@ -72,10 +69,7 @@ class GalleryCollectionViewController: UICollectionViewController {
                         completion(imageData)
                     }
                 } else {
-                    DispatchQueue.main.sync {
-                        imageCache.setObject(self.imagePlaceholderData! as NSData, forKey: self.photos[indexPath.section].id as NSString)
-                        completion(self.imagePlaceholderData!)
-                    }
+                    completion(nil)
                 }
             }
         }
@@ -110,7 +104,12 @@ class GalleryCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
         cell.titleLabel.text = photos[indexPath.section].photoTitle
         setCellImageAsync(cell: cell, indexPath: indexPath) { (imageData) in
-            cell.photoImageView.image = UIImage(data: imageData)
+            if let imageData = imageData {
+                cell.photoImageView.image = UIImage(data: imageData)
+            } else {
+                cell.photoImageView.image = UIImage(data: self.imagePlaceholderData!)
+                imageCache.setObject(self.imagePlaceholderData! as NSData, forKey: self.photos[indexPath.section].id as NSString)
+            }
         }
         return cell
     }
