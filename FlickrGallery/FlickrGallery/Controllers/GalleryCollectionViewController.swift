@@ -56,7 +56,7 @@ class GalleryCollectionViewController: UICollectionViewController {
      Set photos asynchronously.
      Check whether the `imageCache` contains the image data, if not, download the image with `photoImageURL` in `Photo` and store it into `imageCache`.
      The `photoImageURL` will be downloaded only once unless users restart the app. After downloading, cell's image will always be pulling from cache.
-     If no image can be downloaded from url, a placeholder image will be used which tells use the image is not available.
+     If no image can be downloaded from url, a placeholder image will be used which tells use the image is not available (rarely happens).
     */
     func setCellImageAsync(cell: GalleryCollectionViewCell, indexPath: IndexPath, completion: @escaping(_ imageData: Data?) -> Void) {
         if let cacheNSData = imageCache.object(forKey: self.photos[indexPath.section].id as NSString) {
