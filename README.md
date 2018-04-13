@@ -25,7 +25,8 @@ Load yesterday's interestingness from Flickr.
 - Users can use this application under both portrait and landscape mode.
 
 ## Usage
-- `git clone https://github.com/miracle0930/FlickrGallery.git` then you are ready to go. Flickr api key were pre-installed.
+- Xcode9, Swift4.
+- Just run `git clone https://github.com/miracle0930/FlickrGallery.git` then you are ready to go.
 
 
 ## Directory
